@@ -35,16 +35,14 @@ def deaf_grandma
 	while input != 'BYE' || attempts < 3
 		if input != input.upcase
 			puts 'Huh?! speak up, sonny'.upcase
-			input = gets.chomp
 			attempts = 1
 		elsif input == 'BYE'
 			attempts += 1
 			puts "what's that you said?".upcase
-			input = gets.chomp
 		elsif input == input.upcase
 			puts "No, not since #{rand(1930..1950)}!".upcase
-			input = gets.chomp
 		end
+		input = gets.chomp
 	end
 
 	puts 'Goodbye sonny! Come back soon.'.upcase
