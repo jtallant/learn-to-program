@@ -49,6 +49,11 @@ def deaf_grandma
 end
 
 def leap_years
+
+	def leap_year?(year)
+		year % 4 == 0 && year % 100 != 0 || year % 4 == 0 && year % 100 == 0 && year % 400 == 0
+	end
+
 	puts 'Enter a starting year.'
 	start_year = gets.chomp
 	puts 'Enter an ending year.'
@@ -61,10 +66,7 @@ def leap_years
 
 	years = start_year.to_i..end_year.to_i
 	years.each do |year|
-		# if the year is divisible by 4 and the year is not divisible by 100 OR the year is divisible by 4 and divisible by 100 and divisble by 400
-		if year % 4 == 0 && year % 100 != 0 || year % 4 == 0 && year % 100 == 0 && year % 400 == 0
-			puts year
-		end
+		puts year if leap_year?(year)
 	end
 
 end
