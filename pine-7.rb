@@ -36,6 +36,7 @@ def deaf_grandma
 		if input != input.upcase
 			puts 'Huh?! speak up, sonny'.upcase
 			input = gets.chomp
+			attempts = 1
 		elsif input == 'BYE'
 			attempts += 1
 			puts "what's that you said?".upcase
