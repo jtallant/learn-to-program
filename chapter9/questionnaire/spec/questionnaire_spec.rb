@@ -1,4 +1,3 @@
-require 'question'
 require 'questionnaire'
 
 describe Questionnaire do

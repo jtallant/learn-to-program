@@ -1,3 +1,5 @@
+Question = Struct.new(:text, :record_answer, :reply)
+
 class Questionnaire
 
   attr_accessor :greeting, :debrief_message, :questions
@@ -13,21 +15,18 @@ class Questionnaire
   end
 
   def ask_questions
-
     @questions.each do |question|
-
       while true
         puts question.text
         reply = gets.chomp.downcase
 
         if valid_reply?(reply)
-          question.log_reply(reply)
+          question.reply = reply
           break
         else
           puts 'Please answer yes or no'
         end
       end
-
     end
   end
 
@@ -40,7 +39,7 @@ class Questionnaire
   end
 
   def result
-    result  = "================================\n"
+    result  = "\n================================\n"
     result += "RESULTS\n"
     result += "================================\n"
     @questions.each do |question|

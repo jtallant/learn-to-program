@@ -1,4 +1,3 @@
-require './question'
 require './questionnaire'
 
 greeting = 'Hello, and thank you for taking the time to help me with this experiment.
